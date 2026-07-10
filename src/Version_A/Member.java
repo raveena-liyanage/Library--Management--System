@@ -24,6 +24,9 @@ public class Member {
         public void borrowBook(Book book) {
             borrowedBooks.add(book);
         }
+        public void returnBook(Book book) {
+            borrowedBooks.remove(book);
+        }
 
 
 }
