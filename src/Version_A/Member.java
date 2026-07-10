@@ -12,5 +12,8 @@ public class Member {
             this.name = name;
             this.borrowedBooks = new ArrayList<>();
         }
+        public String getMemberId() {
+            return memberId;
+        }
 
 }
