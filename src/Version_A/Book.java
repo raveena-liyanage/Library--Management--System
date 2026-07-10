@@ -12,5 +12,8 @@ public class Book {
         this.author = author;
         this.isAvailable = true;
     }
+    public String getIsbn() {
+        return isbn;
+    }
 
 }
