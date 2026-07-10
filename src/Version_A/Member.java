@@ -27,6 +27,9 @@ public class Member {
         public void returnBook(Book book) {
             borrowedBooks.remove(book);
         }
+        public void displayInfo() {
+            System.out.println("Member ID: " + memberId + " | Name: " + name + " | Books Borrowed: " + borrowedBooks.size());
+        }
 
 
 }
