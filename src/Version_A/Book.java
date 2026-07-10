@@ -27,5 +27,9 @@ public class Book {
     public void setAvailable(boolean available) {
         isAvailable = available;
     }
+    public void displayInfo() {
+        String status = isAvailable ? "Available" : "Borrowed";
+        System.out.println("ISBN: " + isbn + " | Title: " + title + " | Author: " + author + " | Status: " + status);
+    }
 
 }
