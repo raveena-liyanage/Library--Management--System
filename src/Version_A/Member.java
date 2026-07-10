@@ -7,4 +7,10 @@ public class Member {
         private String name;
         private ArrayList<Book> borrowedBooks;
 
+        public Member(String memberId, String name) {
+            this.memberId = memberId;
+            this.name = name;
+            this.borrowedBooks = new ArrayList<>();
+        }
+
 }
