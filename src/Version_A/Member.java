@@ -21,6 +21,9 @@ public class Member {
         public ArrayList<Book> getBorrowedBooks() {
             return borrowedBooks;
         }
+        public void borrowBook(Book book) {
+            borrowedBooks.add(book);
+        }
 
 
 }
