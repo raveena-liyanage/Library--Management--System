@@ -18,6 +18,9 @@ public class Member {
         public String getName() {
             return name;
         }
+        public ArrayList<Book> getBorrowedBooks() {
+            return borrowedBooks;
+        }
 
 
 }
