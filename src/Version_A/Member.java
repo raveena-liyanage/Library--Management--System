@@ -5,5 +5,6 @@ public class Member {
     public class Member {
         private String memberId;
         private String name;
+        private ArrayList<Book> borrowedBooks;
 
 }
