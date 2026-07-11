@@ -5,4 +5,13 @@ import java.util.Scanner;
 public class LibrarySystem {
     private ArrayList<Book> bookList = new ArrayList<>();
     private ArrayList<Member> memberList = new ArrayList<>();
+
+    private Book findBook(String isbn) {
+        for (Book b : bookList) {
+            if (b.getIsbn().equals(isbn)) {
+                return b;
+            }
+        }
+        return null;
+    }
 }
