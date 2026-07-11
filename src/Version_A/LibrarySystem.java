@@ -14,10 +14,13 @@ public class LibrarySystem {
         }
         return null;
     }
-    for (Member m : memberList) {
-        if (m.getMemberId().equals(id)) {
-            return m;
+    private Member findMember(String id) {
+        for (Member m : memberList) {
+            if (m.getMemberId().equals(id)) {
+                return m;
+            }
         }
+        return null;
     }
 
 }
