@@ -33,4 +33,10 @@ public class Book {
     public void setAvailable(boolean available) {
         this.available = available;
     }
+    //Using AI
+    @Override
+    public String toString() {
+        return String.format("ISBN: %-8s | Title: %-20s | Author: %-15s | Status: %s",
+                isbn, title, author, available ? "Available" : "Borrowed");
+    }
 }
