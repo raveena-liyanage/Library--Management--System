@@ -34,4 +34,6 @@ public static void main(String[] args) {
     library.bookList.add(new Book("102", "Data Structures", "Jane Smith"));
     library.memberList.add(new Member("M01", "Alice"));
 
+    System.out.println("== Welcome to the Library Management System ==");
+
 }
