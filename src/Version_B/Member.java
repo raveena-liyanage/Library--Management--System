@@ -30,5 +30,12 @@ public class Member {
     public boolean hasReachedBorrowLimit() {
         return borrowedBooks.size() >= MAX_BOOKS_ALLOWED;
     }
+    public void borrowBook(Book book) {
+        borrowedBooks.add(book);
+    }
+
+    public void returnBook(Book book) {
+        borrowedBooks.remove(book);
+    }
 
 }
