@@ -69,12 +69,12 @@ public class LibrarySystem {
                     break;
                 case 3:
                     System.out.print("Enter Member ID: ");
-                    String id = scanner.nextLine();
+                    String borrowId = scanner.nextLine();
                     System.out.print("Enter Book ISBN to borrow: ");
-                    String isbn = scanner.nextLine();
+                    String borrowIsbn = scanner.nextLine();
 
-                    Member member = library.findMember(id);
-                    Book book = library.findBook(isbn);
+                    Member member = library.findMember(borrowId);
+                    Book book = library.findBook(borrowIsbn);
 
 
                     if (member == null) {
