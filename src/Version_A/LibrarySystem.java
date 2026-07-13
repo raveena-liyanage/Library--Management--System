@@ -44,6 +44,9 @@ public static void main(String[] args) {
         System.out.println("5. Display All Books");
         System.out.println("6. Exit");
         System.out.print("Enter choice: ");
+
+        choice = scanner.nextInt();
+        scanner.nextLine();
     } while (choice !=6 );
 
 }
