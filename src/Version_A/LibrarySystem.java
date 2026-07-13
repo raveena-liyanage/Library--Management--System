@@ -91,6 +91,25 @@ public static void main(String[] args) {
                     System.out.println("Success: " + member.getName() + " borrowed " + book.getTitle());
                 }
                 break;
+            case 4 :
+                System.out.print("Enter Member ID: ");
+                id = scanner.nextLine();
+                System.out.print("Enter Book ISBN to return: ");
+                isbn = scanner.nextLine();
+
+                member = library.findMember(id);
+                book = library.findBook(isbn);
+
+                if (member == null || book == null) {
+                    System.out.println("Error: Invalid Member ID or ISBN.");
+                } else if (member.getBorrowedBooks().contains(book)) {
+                    book.setAvailable(true);
+                    member.returnBook(book);
+                    System.out.println("Success: Book returned successfully!");
+                } else {
+                    System.out.println("Error: This member didn't borrow this book.");
+                }
+                break;
 
         }
     } while (choice !=6 );
