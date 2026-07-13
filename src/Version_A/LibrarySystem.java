@@ -110,6 +110,16 @@ public static void main(String[] args) {
                     System.out.println("Error: This member didn't borrow this book.");
                 }
                 break;
+            case 5 :
+                System.out.println("\n--- Current Library Books ---");
+                if (library.bookList.isEmpty()) {
+                    System.out.println("No books in library.");
+                } else {
+                    for (Book b : library.bookList) {
+                        b.displayInfo();
+                    }
+                }
+                break;
 
         }
     } while (choice !=6 );
