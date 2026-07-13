@@ -15,4 +15,19 @@ public class Book {
         this.author = author;
         this.available = true;
     }
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public boolean isAvailable() {
+        return available;
+    }
 }
