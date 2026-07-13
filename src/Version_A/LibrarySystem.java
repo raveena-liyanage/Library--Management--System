@@ -49,6 +49,16 @@ public static void main(String[] args) {
         scanner.nextLine();
 
         switch (choice) {
+            case 1 :
+                System.out.print("Enter ISBN: ");
+                String isbn = scanner.nextLine();
+                System.out.print("Enter Title: ");
+                String title = scanner.nextLine();
+                System.out.print("Enter Author: ");
+                String author = scanner.nextLine();
+
+                library.bookList.add(new Book(isbn, title, author));
+                System.out.println("Book added successfully!");
 
 
         }
