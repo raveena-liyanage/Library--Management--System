@@ -69,6 +69,28 @@ public static void main(String[] args) {
                 library.memberList.add(new Member(id, name));
                 System.out.println("Member registered successfully!");
                 break;
+            case 3 :
+                System.out.print("Enter Member ID: ");
+                String id = scanner.nextLine();
+                System.out.print("Enter Book ISBN to borrow: ");
+                String isbn = scanner.nextLine();
+
+                Member member = library.findMember(id);
+                Book book = library.findBook(isbn);
+
+
+                if (member == null) {
+                    System.out.println("Error: Member not found.");
+                } else if (book == null) {
+                    System.out.println("Error: Book not found.");
+                } else if (!book.isAvailable()) {
+                    System.out.println("Error: Book is already borrowed by someone else.");
+                } else {
+                    book.setAvailable(false);
+                    member.borrowBook(book);
+                    System.out.println("Success: " + member.getName() + " borrowed " + book.getTitle());
+                }
+                break;
 
         }
     } while (choice !=6 );
