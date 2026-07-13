@@ -123,8 +123,9 @@ public static void main(String[] args) {
             case 6 :
                 System.out.println("Exiting system. Goodbye!");
                 break;
-
-
+            default:
+                System.out.println("Invalid selection. Try again.");
+                break;
         }
     } while (choice !=6 );
 
