@@ -47,6 +47,11 @@ public static void main(String[] args) {
 
         choice = scanner.nextInt();
         scanner.nextLine();
+
+        switch (choice) {
+
+
+        }
     } while (choice !=6 );
 
 }
