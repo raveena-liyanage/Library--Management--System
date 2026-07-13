@@ -23,5 +23,12 @@ public class Member {
     public String getName() {
         return name;
     }
+    //Using AI
+    public List<Book> getBorrowedBooks() {
+        return Collections.unmodifiableList(borrowedBooks);
+    }
+    public boolean hasReachedBorrowLimit() {
+        return borrowedBooks.size() >= MAX_BOOKS_ALLOWED;
+    }
 
 }
