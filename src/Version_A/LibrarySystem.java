@@ -129,4 +129,6 @@ public static void main(String[] args) {
         }
     } while (choice !=6 );
 
+    scanner.close();
+
 }
