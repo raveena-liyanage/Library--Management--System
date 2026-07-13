@@ -36,4 +36,14 @@ public static void main(String[] args) {
 
     System.out.println("== Welcome to the Library Management System ==");
 
+    do {
+        System.out.println("\n1. Add a Book");
+        System.out.println("2. Register a Member");
+        System.out.println("3. Borrow a Book");
+        System.out.println("4. Return a Book");
+        System.out.println("5. Display All Books");
+        System.out.println("6. Exit");
+        System.out.print("Enter choice: ");
+    } while (choice !=6 );
+
 }
