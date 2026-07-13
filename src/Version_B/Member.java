@@ -37,5 +37,10 @@ public class Member {
     public void returnBook(Book book) {
         borrowedBooks.remove(book);
     }
+    @Override
+    public String toString() {
+        return String.format("Member ID: %-6s | Name: %-15s | Books Borrowed: %d/%d",
+                memberId, name, borrowedBooks.size(), MAX_BOOKS_ALLOWED);
+    }
 
 }
