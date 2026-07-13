@@ -60,7 +60,15 @@ public static void main(String[] args) {
                 library.bookList.add(new Book(isbn, title, author));
                 System.out.println("Book added successfully!");
                 break;
+            case 2 :
+                System.out.print("Enter Member ID: ");
+                String id = scanner.nextLine();
+                System.out.print("Enter Name: ");
+                String name = scanner.nextLine();
 
+                library.memberList.add(new Member(id, name));
+                System.out.println("Member registered successfully!");
+                break;
 
         }
     } while (choice !=6 );
