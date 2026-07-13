@@ -30,4 +30,8 @@ public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     int choice;
 
+    library.bookList.add(new Book("101", "Java Programming", "John Doe"));
+    library.bookList.add(new Book("102", "Data Structures", "Jane Smith"));
+    library.memberList.add(new Member("M01", "Alice"));
+
 }
