@@ -120,6 +120,10 @@ public static void main(String[] args) {
                     }
                 }
                 break;
+            case 6 :
+                System.out.println("Exiting system. Goodbye!");
+                break;
+
 
         }
     } while (choice !=6 );
