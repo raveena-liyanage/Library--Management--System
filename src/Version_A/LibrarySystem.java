@@ -59,6 +59,7 @@ public static void main(String[] args) {
 
                 library.bookList.add(new Book(isbn, title, author));
                 System.out.println("Book added successfully!");
+                break;
 
 
         }
