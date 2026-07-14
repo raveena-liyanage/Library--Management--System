@@ -62,4 +62,7 @@ public class LibrarySystem {
         } while (input.isEmpty());
         return input;
     }
+    public static void main(String[] args) {
+
+    }
 }
