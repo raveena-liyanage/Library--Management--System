@@ -63,6 +63,8 @@ public class LibrarySystem {
         return input;
     }
     public static void main(String[] args) {
+        LibrarySystem library = new LibrarySystem();
+        Scanner scanner = new Scanner(System.in);
 
     }
 }
