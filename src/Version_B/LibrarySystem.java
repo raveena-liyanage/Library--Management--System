@@ -95,6 +95,52 @@ public class LibrarySystem {
                 scanner.nextLine();
                 continue;
             }
+            try {
+                switch (choice) {
+                    case 1:
+                        String isbn = library.promptNonEmpty(scanner, "Enter ISBN: ");
+                        String title = library.promptNonEmpty(scanner, "Enter Title: ");
+                        String author = library.promptNonEmpty(scanner, "Enter Author: ");
+                        library.addBook(isbn, title, author);
+                        System.out.println("Book added successfully!");
+                        break;
+                    case 2:
+                        String id = library.promptNonEmpty(scanner, "Enter Member ID: ");
+                        String name = library.promptNonEmpty(scanner, "Enter Name: ");
+                        library.registerMember(id, name);
+                        System.out.println("Member registered successfully!");
+                        break;
+                    case 3:
+                        String borrowId = library.promptNonEmpty(scanner, "Enter Member ID: ");
+                        String borrowIsbn = library.promptNonEmpty(scanner, "Enter Book ISBN to borrow: ");
+                        library.borrowBook(borrowId, borrowIsbn);
+                        break;
+                    case 4:
+                        String returnId = library.promptNonEmpty(scanner, "Enter Member ID: ");
+                        String returnIsbn = library.promptNonEmpty(scanner, "Enter Book ISBN to return: ");
+                        library.returnBook(returnId, returnIsbn);
+                        break;
+                    case 5:
+                        library.displayAllBooks();
+                        break;
+                    case 6:
+                        library.displayAllMembers();
+                        break;
+                    case 7:
+                        String keyword = library.promptNonEmpty(scanner, "Enter title keyword: ");
+                        library.searchBookByTitle(keyword);
+                        break;
+                    case 8:
+                        System.out.println("Exiting system. Goodbye!");
+                        break;
+                    default:
+                        System.out.println("Invalid selection. Try again.");
+                        break;
+                }
+            } catch (DuplicateEntryException | BookNotFoundException | MemberNotFoundException
+                     | BookNotAvailableException | BookNotBorrowedException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
         }
     }
 }
