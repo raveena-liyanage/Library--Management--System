@@ -76,5 +76,16 @@ public class LibrarySystem {
         }
         System.out.println("== Welcome to the Library Management System ==");
 
+        while (choice != 8) {
+            System.out.println("\n1. Add a Book");
+            System.out.println("2. Register a Member");
+            System.out.println("3. Borrow a Book");
+            System.out.println("4. Return a Book");
+            System.out.println("5. Display All Books");
+            System.out.println("6. Display All Members");
+            System.out.println("7. Search Book by Title");
+            System.out.println("8. Exit");
+            System.out.print("Enter choice: ");
+        }
     }
 }
