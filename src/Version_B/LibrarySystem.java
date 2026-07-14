@@ -38,13 +38,7 @@ public class LibrarySystem {
     }
 
 
-    private Member getMemberOrThrow(String id) throws MemberNotFoundException {
-        Member member = members.get(id);
-        if (member == null) {
-            throw new MemberNotFoundException("No member found with ID: " + id);
-        }
-        return member;
-    }
+
     private String promptNonEmpty(Scanner scanner, String prompt) {
         String input;
         do {
