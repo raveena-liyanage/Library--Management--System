@@ -74,6 +74,7 @@ public class LibrarySystem {
         } catch (DuplicateEntryException e) {
             System.out.println("Seed data error: " + e.getMessage());
         }
+        System.out.println("== Welcome to the Library Management System ==");
 
     }
 }
