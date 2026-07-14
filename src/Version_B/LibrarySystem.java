@@ -67,5 +67,13 @@ public class LibrarySystem {
         Scanner scanner = new Scanner(System.in);
         int choice = -1;
 
+        try {
+            library.addBook("101", "Java Programming", "John Doe");
+            library.addBook("102", "Data Structures", "Jane Smith");
+            library.registerMember("M01", "Alice");
+        } catch (DuplicateEntryException e) {
+            System.out.println("Seed data error: " + e.getMessage());
+        }
+
     }
 }
