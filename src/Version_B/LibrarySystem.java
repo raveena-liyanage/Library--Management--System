@@ -86,6 +86,15 @@ public class LibrarySystem {
             System.out.println("7. Search Book by Title");
             System.out.println("8. Exit");
             System.out.print("Enter choice: ");
+
+            try {
+                choice = scanner.nextInt();
+                scanner.nextLine();
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number between 1 and 8.");
+                scanner.nextLine();
+                continue;
+            }
         }
     }
 }
