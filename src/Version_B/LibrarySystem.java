@@ -36,6 +36,69 @@ public class LibrarySystem {
         }
         return member;
     }
+    private void borrowBook(String memberId, String isbn)
+            throws MemberNotFoundException, BookNotFoundException, BookNotAvailableException {
+        Member member = getMemberOrThrow(memberId);
+        Book book = getBookOrThrow(isbn);
+
+        if (!book.isAvailable()) {
+            throw new BookNotAvailableException("\"" + book.getTitle() + "\" is already borrowed.");
+        }
+        if (member.hasReachedBorrowLimit()) {
+            throw new BookNotAvailableException(member.getName() + " has reached the maximum borrow limit.");
+        }
+
+        book.setAvailable(false);
+        member.borrowBook(book);
+        System.out.println("Success: " + member.getName() + " borrowed \"" + book.getTitle() + "\".");
+    }
+
+    private void returnBook(String memberId, String isbn)
+            throws MemberNotFoundException, BookNotFoundException, BookNotBorrowedException {
+        Member member = getMemberOrThrow(memberId);
+        Book book = getBookOrThrow(isbn);
+
+        if (!member.getBorrowedBooks().contains(book)) {
+            throw new BookNotBorrowedException(member.getName() + " did not borrow \"" + book.getTitle() + "\".");
+        }
+
+        book.setAvailable(true);
+        member.returnBook(book);
+        System.out.println("Success: \"" + book.getTitle() + "\" has been returned.");
+    }
+
+    private void displayAllBooks() {
+        System.out.println("\n--- Current Library Books ---");
+        if (books.isEmpty()) {
+            System.out.println("No books in library.");
+            return;
+        }
+        books.values().forEach(System.out::println);
+    }
+
+    private void displayAllMembers() {
+        System.out.println("\n--- Registered Members ---");
+        if (members.isEmpty()) {
+            System.out.println("No members registered.");
+            return;
+        }
+        members.values().forEach(System.out::println);
+    }
+
+    private void searchBookByTitle(String keyword) {
+        System.out.println("\n--- Search Results ---");
+        String lowerKeyword = keyword.toLowerCase();
+        boolean found = false;
+        for (Book book : books.values()) {
+            if (book.getTitle().toLowerCase().contains(lowerKeyword)) {
+                System.out.println(book);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No books matched \"" + keyword + "\".");
+        }
+    }
 
 
 
