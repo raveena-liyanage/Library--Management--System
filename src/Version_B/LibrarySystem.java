@@ -51,4 +51,15 @@ public class LibrarySystem {
         }
         return member;
     }
+    private String promptNonEmpty(Scanner scanner, String prompt) {
+        String input;
+        do {
+            System.out.print(prompt);
+            input = scanner.nextLine().trim();
+            if (input.isEmpty()) {
+                System.out.println("Input cannot be empty. Please try again.");
+            }
+        } while (input.isEmpty());
+        return input;
+    }
 }
